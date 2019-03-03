@@ -5,4 +5,13 @@ form,
 input {
   margin: 10px;
   float: left;
+  color:red;
 }
+
+body {
+  background-image: url("../images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+

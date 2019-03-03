@@ -5,16 +5,14 @@
       // displayanimalInfo function re-renders the HTML to display the appropriate content
       function displayAnimalInfo() {
 
-       // var animal = $(this).attr("data-name");
-       // var queryURL = "https://www.omdbapi.com/?t=" + animal + "&y=&plot=short&apikey=trilogy";
-// -- new code:
-    // Grabbing and storing the data-animal property value from the button
-    var animal = $(this).attr("data-name");
 
-    // Constructing a queryURL using the animal name
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      animal + "&api_key=nL69goaRlIH40cpVtwF61UO5rxvKVOA3&limit=10";
-// -- end new code
+    // Grabbing and storing the data-animal property value from the button
+      var animal = $(this).attr("data-name");
+
+      // Constructing a queryURL using the animal name
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        animal + "&api_key=nL69goaRlIH40cpVtwF61UO5rxvKVOA3&limit=10";
+
 
         // Creating an AJAX call for the specific animal button being clicked
         $.ajax({
@@ -42,11 +40,10 @@
               // Creating and storing an image tag
               var animalImage = $("<img>");
               // Setting the src attribute of the image to a property pulled off the result item
-              //animalImage.attr("src", results[i].images.fixed_height.url);
+
               animalImage.attr({src: results[i].images.fixed_height_still.url, "data-still":results[i].images.fixed_height_still.url,
               "data-animate":results[i].images.fixed_height.url, "data-state":"still", class:"gif"});
-              //<img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
-              console.log(animalImage);
+
               // Appending the paragraph and image tag to the animalDiv
               animalDiv.append(p);
               animalDiv.append(animalImage);
@@ -54,7 +51,7 @@
           // Putting the entire animal above the previous animals
           $("#animals-view").prepend(animalDiv);
 
-//---------------------------------test
+
 
           console.log("is the document ready");
           $(".gif").on("click", function() {
@@ -73,7 +70,7 @@
               $(this).attr("data-state", "still");
             }
           });
-//---------------------------------test
+
 
         }
         
