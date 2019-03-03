@@ -120,8 +120,6 @@
       });
       
      
-    
-
       // Adding a click event listener to all elements with a class of "animal-btn"
       $(document).on("click", ".animal-btn", displayAnimalInfo);
 
